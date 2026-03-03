@@ -32,6 +32,17 @@ const DEFAULT_THEMES = [
   },
 ];
 
+const MATCHA_THEMES = [
+  {
+    name: "Matcha Slate",
+    value: "matcha-slate",
+  },
+  {
+    name: "Matcha Warm",
+    value: "matcha-warm",
+  },
+];
+
 const SCALED_THEMES = [
   {
     name: "Default",
@@ -40,6 +51,14 @@ const SCALED_THEMES = [
   {
     name: "Blue",
     value: "blue-scaled",
+  },
+  {
+    name: "Matcha Slate",
+    value: "matcha-slate-scaled",
+  },
+  {
+    name: "Matcha Warm",
+    value: "matcha-warm-scaled",
   },
 ];
 
@@ -74,6 +93,15 @@ export function ThemeSelector() {
           <SelectGroup>
             <SelectLabel>Default</SelectLabel>
             {DEFAULT_THEMES.map((theme) => (
+              <SelectItem key={theme.name} value={theme.value}>
+                {theme.name}
+              </SelectItem>
+            ))}
+          </SelectGroup>
+          <SelectSeparator />
+          <SelectGroup>
+            <SelectLabel>Matcha</SelectLabel>
+            {MATCHA_THEMES.map((theme) => (
               <SelectItem key={theme.name} value={theme.value}>
                 {theme.name}
               </SelectItem>
